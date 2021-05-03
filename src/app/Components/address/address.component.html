@@ -1,0 +1,29 @@
+<h1>Add an Address</h1>
+<div class="col-sm-4"></div>
+<button type="button" class="btn btn-primary" (click)="addAddress()">Add Address</button>
+<form *ngIf="addressFormVisible" [formGroup]="addressForm" class="col-sm-4">
+  <div class="form-group">
+    <label for="name">Name</label>
+    <input type="text" class="form-control ml-3" id="name" aria-describedby="name" formControlName="name"/>
+  </div>
+  <div class="form-group">
+    <div>
+      <label for="address">Address</label>
+      <input type="text" class="form-control ml-3" id="address" formControlName="address"/>
+    </div>
+  </div>
+  <button type="button" class="btn btn-success" (click)="saveAddress()">Save</button>
+</form>
+<div *ngIf="!addressFormVisible">
+  <div *ngFor="let address of addresses; let i as index">
+    <div class="card mb-3" style="width: 18rem;">
+      <div class="card-body">
+        <h5 class="card-title">Address</h5>
+        <p class="card-text">{{getAddressesCity(address)}}</p>
+        <p class="card-text">{{getAddresses(address)}}</p>
+        <a href="#" class="btn btn-primary mr-2" (click)="onEditClick(address,i)">Edit</a>
+        <a href="#" class="btn btn-danger" (click)="onDeleteClick(i)">Delete</a>
+      </div>
+    </div>
+  </div>
+</div>
