@@ -6,6 +6,8 @@ import { HomeComponent } from './Components/home/home.component';
 import { LoginComponent } from './Components/login/login.component';
 import { RegisterComponent } from './Components/register/register.component';
 import { AddressComponent } from './Components/address/address.component';
+import { CartItemsComponent } from './Components/cart-items/cart-items.component';
+import { TrackOrderComponent } from './Components/track-order/track-order.component';
 const routes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'home', component: HomeComponent },
@@ -13,7 +15,9 @@ const routes: Routes = [
   { path: 'register', component: RegisterComponent },
   { path: 'forgot-password', component: ForgotPasswordComponent },
   { path: 'settings', component: SettingsComponent },
-  { path: 'settings/address', component: AddressComponent }
+  { path: 'settings/address', component: AddressComponent },
+  { path: 'cart', component: CartItemsComponent},
+  { path: 'track-order', component: TrackOrderComponent}
 ];
 
 @NgModule({

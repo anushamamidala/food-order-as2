@@ -1,0 +1,33 @@
+<div class="mx-auto w-75">
+    <h3>Contents of your cart.</h3>
+    <h6>Total Amount : {{totalPrice}} INR </h6>
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">Sr. No.</th>
+                <th scope="col">Order</th>
+                <th scope="col">Cost</th>
+            </tr>
+        </thead>
+        <tbody *ngIf="cartItems == null">
+            <tr>
+               No Items in the cart
+            </tr>
+        </tbody>
+        <tbody *ngIf="cartItems && cartItems.length>0">
+            <tr *ngFor="let item of cartItems; index as i">
+                <th scope="row">{{i+1}}</th>
+                <td>{{item.name}}</td>
+                <td>{{item.price.price}}</td>
+            </tr>
+            <tr>
+                <th colspan="2">Total Price</th>
+                <td>{{totalPrice}}</td>
+            </tr>
+        </tbody>
+        
+    </table>
+
+    <button class="btn btn-primary mr-3" routerLink="/track-order" [disabled]="cartItems == null">Place Order</button>
+    <button class="btn btn-secondary" routerLink="/home">Home</button>
+</div>

@@ -18,6 +18,7 @@ import { OrderService } from './Services/order.service';
 import { SettingsService } from './Services/settings.service';
 import { UserService } from './Services/user.service';
 import { HttpClientModule } from '@angular/common/http';
+import { CartItemsComponent } from './Components/cart-items/cart-items.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { HttpClientModule } from '@angular/common/http';
     ForgotPasswordComponent,
     HeaderComponent,
     SettingsComponent,
-    AddressComponent
+    AddressComponent,
+    CartItemsComponent
   ],
   imports: [
     BrowserModule,
